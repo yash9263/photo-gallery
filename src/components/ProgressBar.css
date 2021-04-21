@@ -1,0 +1,11 @@
+.wrapper {
+  height: 30px;
+  width: 100px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+.top {
+  height: 30px;
+  background-color: rgba(168, 86, 175, 0.705);
+  border-radius: 5px;
+}
