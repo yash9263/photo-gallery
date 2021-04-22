@@ -29,7 +29,9 @@ const useStorage = (file, fileName) => {
       async () => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
-        collectionRef.add({ url, createdAt });
+        const likes = [];
+        const comments = [];
+        collectionRef.add({ url, createdAt, likes, comments });
         setUrl(url);
       }
     );
