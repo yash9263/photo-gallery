@@ -1,16 +1,17 @@
-import react from 'react';
-import Navbar from './Navbar';
+import react from "react";
+import Navbar from "./Navbar";
 import ImageInput from "./ImageInput";
-import ImageGrid from './ImageGrid';
+import ImageGrid from "./ImageGrid";
 
 const Home = () => {
-    return <div>
-        {/* <Navbar /> */}
-        <h1>InstaClone</h1>
-        {/* <ImageInput />  */}
-        {/* <ImageGrid /> */}
-        
+  return (
+    <div>
+      {/* <Navbar /> */}
+      <h1>SnapShot</h1>
+      <ImageInput />
+      {/* <ImageGrid /> */}
     </div>
-}
+  );
+};
 
 export default Home;

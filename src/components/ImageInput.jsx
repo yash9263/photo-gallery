@@ -1,7 +1,9 @@
-import react, { useState } from "react";
+import react, { useContext, useState } from "react";
 import ProgressBar from "./ProgressBar";
+import { firebaseContext } from "../hooks/FirebaseProvider";
 
 const ImageInput = () => {
+  const user = useContext(firebaseContext);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const types = ["image/png", "image/jpeg"];
@@ -9,7 +11,7 @@ const ImageInput = () => {
   function changeHadler(event) {
     const fileSelected = event.target.files[0];
     // console.log(fileSelected);
-    if (fileSelected && types.includes(fileSelected.type)) {
+    if (fileSelected && types.includes(fileSelected.type) && user) {
       setFile(fileSelected);
       setError("");
     } else {
@@ -20,7 +22,7 @@ const ImageInput = () => {
   return (
     <form>
       <label>
-        <input type="file" onChange={changeHadler} />
+        {user && <input type="file" onChange={changeHadler} />}
         <span>+</span>
       </label>
       <div>

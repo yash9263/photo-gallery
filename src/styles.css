@@ -1,4 +1,17 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Original+Surfer&display=swap");
+:root {
+  --main-bg-color: #fcecdd;
+  --primary-color: #fea82f;
+  --accent: #ff6701;
+  --secondary-color: #ffc288;
 }
+* {
+  margin: 0;
+}
+.App {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  background-color: var(--main-bg-color);
+}
+/* font-family: 'Original Surfer', cursive; */
