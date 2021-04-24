@@ -9,7 +9,7 @@ const Home = () => {
       {/* <Navbar /> */}
       <h1>SnapShot</h1>
       <ImageInput />
-      {/* <ImageGrid /> */}
+      <ImageGrid />
     </div>
   );
 };

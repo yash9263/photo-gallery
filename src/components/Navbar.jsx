@@ -14,6 +14,7 @@ import React from "react";
 import firebase from "firebase/app";
 import MyImages from "./MyImages";
 import Saved from "./Saved";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [error, setError] = useState(null);
@@ -31,20 +32,25 @@ const Navbar = () => {
   return (
     <Router>
       <nav>
+        {user && <div>Hey! {user.displayName}</div>}
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
+
           {user ? (
             <React.Fragment>
               <Redirect to="/" />
+
               <li>
                 <Link to="/myImages">My Images</Link>
               </li>
               <li>
                 <Link to="/saved">Saved Images</Link>
               </li>
-              <button onClick={handleSignOut}>Sign out</button>
+              <li>
+                <button onClick={handleSignOut}>Sign out</button>
+              </li>
             </React.Fragment>
           ) : (
             <React.Fragment>

@@ -4,6 +4,7 @@
   --primary-color: #fea82f;
   --accent: #ff6701;
   --secondary-color: #ffc288;
+  background-color: var(--main-bg-color);
 }
 * {
   margin: 0;
@@ -12,6 +13,5 @@
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
   font-weight: 500;
-  background-color: var(--main-bg-color);
 }
 /* font-family: 'Original Surfer', cursive; */

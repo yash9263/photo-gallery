@@ -1,6 +1,10 @@
 import react from 'react';
+import { Router,Switch,Route } from 'react-router';
 import Home from './components/Home';
-import ImageInput from './components/ImageInput';
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
+import MyImages from './components/MyImages';
+import Saved from './components/Saved';
 import LoginSnack from './components/LoginSnack';
 import Navbar from './components/Navbar';
 import FirebaseProvider from './hooks/FirebaseProvider';
@@ -11,9 +15,7 @@ export default function App() {
     <FirebaseProvider>
       <div className="App">
         <Navbar />
-        {/* <LoginSnack /> */}
-        {/* <ImageInput /> */}
-      </div>
+        </div>
     </FirebaseProvider>
   );
 }

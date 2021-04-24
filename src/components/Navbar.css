@@ -1,0 +1,13 @@
+nav {
+  display: inline;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+nav ul {
+  list-style-type: none;
+  display: inline;
+}
+nav ul li {
+  display: inline;
+  color: inherit;
+}
