@@ -4,7 +4,6 @@
   --primary-color: #fea82f;
   --accent: #ff6701;
   --secondary-color: #ffc288;
-  background-color: var(--main-bg-color);
 }
 
 .App {

@@ -9,13 +9,15 @@ function MyImages() {
   //   console.log(userDocs);
 
   return (
-    <div>
-      My Images
+    <div className="lg:grid grid-cols-4 grid-cols-1 gap-4 lg:mx-32 my-3">
       {userDocs.userImages &&
         userDocs.userImages.map((image, index) => {
           return (
-            <div key={index}>
-              <img src={image} />
+            <div
+              key={index}
+              className="max-w-sm rounded overflow-hidden shadow-lg"
+            >
+              <img src={image} className="w-full" />
             </div>
           );
         })}

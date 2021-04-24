@@ -14,7 +14,6 @@ import React from "react";
 import firebase from "firebase/app";
 import MyImages from "./MyImages";
 import Saved from "./Saved";
-import "./Navbar.css";
 
 const Navbar = () => {
   const [error, setError] = useState(null);
