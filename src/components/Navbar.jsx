@@ -31,39 +31,70 @@ const Navbar = () => {
   };
   return (
     <Router>
-      <nav>
-        {user && <div>Hey! {user.displayName}</div>}
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+      <div className="">
+        <div className="flex flex-wrap items-center justify-between p-2 bg-blue-200">
+          {user && <div>Hey! {user.displayName}</div>}
+          <ul className="flex w-full mx-12 items-stretch flex-wrap justify-between">
+            <li className="mr-6">
+              <Link
+                to="/"
+                className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+              >
+                Home
+              </Link>
+            </li>
 
-          {user ? (
-            <React.Fragment>
-              <Redirect to="/" />
+            {user ? (
+              <React.Fragment>
+                <Redirect to="/" />
 
-              <li>
-                <Link to="/myImages">My Images</Link>
-              </li>
-              <li>
-                <Link to="/saved">Saved Images</Link>
-              </li>
-              <li>
-                <button onClick={handleSignOut}>Sign out</button>
-              </li>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <li>
-                <Link to="/signin">Sign In</Link>
-              </li>
-              <li>
-                <Link to="/signup">Sign Up</Link>
-              </li>
-            </React.Fragment>
-          )}
-        </ul>
-
+                <li className="mr-6">
+                  <Link
+                    to="/myImages"
+                    className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                  >
+                    My Images
+                  </Link>
+                </li>
+                <li className="mr-6">
+                  <Link
+                    to="/saved"
+                    className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                  >
+                    Saved Images
+                  </Link>
+                </li>
+                <li className="mr-6">
+                  <button
+                    className="inline-block text-sm px-4 py-2 leading-none border rounded  border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+                    onClick={handleSignOut}
+                  >
+                    Sign out
+                  </button>
+                </li>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <li className="mr-6">
+                  <Link
+                    to="/signin"
+                    className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                  >
+                    Sign In
+                  </Link>
+                </li>
+                <li className="mr-6">
+                  <Link
+                    to="/signup"
+                    className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+              </React.Fragment>
+            )}
+          </ul>
+        </div>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -81,7 +112,7 @@ const Navbar = () => {
             <Saved />
           </Route>
         </Switch>
-      </nav>
+      </div>
     </Router>
   );
 };

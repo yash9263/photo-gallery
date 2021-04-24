@@ -21,10 +21,10 @@ const ImageInput = () => {
   }
   return (
     <form>
-      <label>
-        {user && <input type="file" onChange={changeHadler} />}
-        <span>+</span>
-      </label>
+      <label>Upload file</label>
+      <input type="file" onChange={changeHadler} />
+      <span>+</span>
+
       <div>
         {error && <div>{error}</div>}
         {file && <div>{file.name}</div>}
