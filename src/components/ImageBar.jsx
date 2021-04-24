@@ -52,7 +52,8 @@ const ImageBar = ({ id, url, totalLikes, totalComments }) => {
     setviewcomment(!viewComment);
   };
 
-  const errorHandler = () => {
+  const errorHandler = (e) => {
+    e.preventDefault();
     if (user) {
       setError("");
     } else {
