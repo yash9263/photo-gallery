@@ -39,15 +39,8 @@ const useStorage = (file, fileName) => {
         const owner = user.displayName;
         imageCollectionRef.add({ owner, url, createdAt, likes, comments });
         setUrl(url);
-        console.log(user.uid);
-        projectFirestore.collection('accounts').doc(user.uid).get()
-        .then((doc) => {
-          if(doc.exists) {
-            console.log(doc);
-          } else {
-            console.log('no data');
-          }
-        }).catch((error) => console.error(error));
+        // console.log(user.uid);
+        
 
         projectFirestore.collection('accounts').doc(user.uid).update({
           userImages: firebase.firestore.FieldValue.arrayUnion(url)

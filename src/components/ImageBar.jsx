@@ -14,7 +14,7 @@ import Modal from "./Modal";
 const ImageBar = ({ id, url, totalLikes, totalComments }) => {
   // console.log(totalLikes);
   const user = useContext(firebaseContext);
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState("");
   const [viewComment, setviewcomment] = useState(false);
   const [error, setError] = useState(null);
   const [selectedImg, setSelctedImg] = useState(null);
@@ -67,7 +67,7 @@ const ImageBar = ({ id, url, totalLikes, totalComments }) => {
     setShowurl(!showurl);
   };
 
-  console.log(totalComments);
+  // console.log(totalComments);
   return (
     <div className="px-6 pt-4 pb-2">
       <div>
