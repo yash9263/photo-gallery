@@ -11,6 +11,8 @@ function Card({ id, owner, url, likes, comments, height }) {
   const user = useContext(firebaseContext);
 
   const imageCollectionRef = projectFirestore.collection("images").doc(id);
+  const accountCollectionRef =
+    user && projectFirestore.collection("accounts").doc(user.uid);
 
   const likeHandler = () => {
     if (!likes.includes(user.displayName)) {
@@ -22,6 +24,15 @@ function Card({ id, owner, url, likes, comments, height }) {
         likes: firebase.firestore.FieldValue.arrayRemove(user.displayName),
       });
     }
+  };
+
+  const saveHandler = () => {
+    accountCollectionRef.update({
+      savedImages: firebase.firestore.FieldValue.arrayUnion({
+        displayName: user.displayName,
+        url: url,
+      }),
+    });
   };
 
   const errorHandler = (e) => {
@@ -40,7 +51,6 @@ function Card({ id, owner, url, likes, comments, height }) {
           <img src="https://picsum.photos/400/300" alt="avatar" />
         </div>
         <div className="user-name">{owner}</div>
-        <i className="fas fa-ellipsis-h"></i>
       </div>
       <div className="post-cont" style={{ height: height }}>
         <img src={url} alt="post" />
@@ -58,8 +68,16 @@ function Card({ id, owner, url, likes, comments, height }) {
           onClick={() => setViewComments(!viewComments)}
           className="fas fa-comment"
         ></i>
-        <i className="fas fa-location-arrow"></i>
-        <i className="fas fa-bookmark save-icon"></i>
+        <i
+          className="fas fa-location-arrow"
+          onClick={() => {
+            navigator.clipboard.writeText(url);
+          }}
+        ></i>
+        <i
+          className="fas fa-bookmark save-icon"
+          onClick={user ? saveHandler : errorHandler}
+        ></i>
       </div>
       <div className="num-cont">
         <div className="likes-text">{likes.length} likes</div>

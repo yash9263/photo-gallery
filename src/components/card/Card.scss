@@ -23,7 +23,6 @@ $icon-color: #d7e0eb;
   .user-info-container {
     display: flex;
     align-items: center;
-    position: relative;
 
     .avatar-cont {
       border-radius: 5em;
@@ -41,12 +40,6 @@ $icon-color: #d7e0eb;
     .user-name {
       font-weight: 600;
       font-size: 0.95em;
-    }
-    i {
-      position: absolute;
-      right: 0.5em;
-      font-size: 0.95em;
-      margin: 0;
     }
   }
   .post-cont {

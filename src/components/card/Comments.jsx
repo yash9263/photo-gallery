@@ -23,12 +23,15 @@ export default function Comments({
 
   function commentHandler(event) {
     event.preventDefault();
-    imageCollectionRef.update({
-      comments: firebase.firestore.FieldValue.arrayUnion({
-        displayName: user.displayName,
-        comment: text,
-      }),
-    });
+    if (text.length > 0) {
+      imageCollectionRef.update({
+        comments: firebase.firestore.FieldValue.arrayUnion({
+          displayName: user.displayName,
+          comment: text,
+        }),
+      });
+    }
+
     setText("");
   }
 
@@ -50,7 +53,7 @@ export default function Comments({
               className="show-comments"
               onClick={() => setViewComments(!viewComments)}
             >
-              View {comments.length} comments
+              View all {comments.length} comments
             </div>
           )}
       <div className="comment-form">
