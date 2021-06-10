@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Original+Surfer&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   --main-bg-color: #fcecdd;
   --primary-color: #fea82f;
@@ -7,8 +8,6 @@
 }
 
 .App {
-  font-family: "Josefin Sans", sans-serif;
-  text-align: center;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 /* font-family: 'Original Surfer', cursive; */
