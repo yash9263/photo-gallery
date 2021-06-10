@@ -6,8 +6,9 @@ import "./Card.scss";
 import Comments from "./Comments";
 
 function Card({ id, owner, url, likes, comments, height }) {
-  const user = useContext(firebaseContext);
+  const [viewComments, setViewComments] = useState(false);
   const [error, setError] = useState(null);
+  const user = useContext(firebaseContext);
 
   const imageCollectionRef = projectFirestore.collection("images").doc(id);
 
@@ -53,13 +54,21 @@ function Card({ id, owner, url, likes, comments, height }) {
               : "fas fa-heart"
           }
         ></i>
-        <i className="fas fa-comment"></i>
+        <i
+          onClick={() => setViewComments(!viewComments)}
+          className="fas fa-comment"
+        ></i>
         <i className="fas fa-location-arrow"></i>
         <i className="fas fa-bookmark save-icon"></i>
       </div>
       <div className="num-cont">
         <div className="likes-text">{likes.length} likes</div>
-        <Comments comments={comments} />
+        <Comments
+          id={id}
+          comments={comments}
+          viewComments={viewComments}
+          setViewComments={setViewComments}
+        />
       </div>
     </div>
   );

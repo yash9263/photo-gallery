@@ -1,8 +1,32 @@
+$icon-color: #a9a9a9;
 .comment-section {
+  .show-comments {
+    color: $icon-color;
+    font-size: 0.95em;
+    cursor: pointer;
+    margin-bottom: 0.4em;
+  }
   .comment-cont {
     display: flex;
     span {
       font-weight: 600;
+      margin-right: 0.5em;
+    }
+  }
+  .comment-form {
+    font-size: 0.875em;
+    display: flex;
+    input {
+      border: 0;
+      outline: none;
+      padding: 0.1em 0.12em;
+      flex-grow: 1;
+    }
+    button {
+      border: 0;
+      outline: none;
+      font-weight: 600;
+      color: dodgerblue;
       margin-right: 0.5em;
     }
   }
