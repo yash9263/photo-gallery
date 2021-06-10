@@ -7,7 +7,7 @@ $icon-color: #d7e0eb;
 
 .card-container {
   font-family: "Roboto", sans-serif;
-  max-width: 16em;
+  max-width: 18em;
   background: white;
   padding: 0.2em 0.3em;
   margin: 1em 1.2em;
@@ -48,7 +48,6 @@ $icon-color: #d7e0eb;
     border-radius: 1em;
     overflow: hidden;
     margin: 0.4em auto;
-    background-color: red;
 
     img {
       width: 100%;
@@ -76,5 +75,12 @@ $icon-color: #d7e0eb;
     .likes-text {
       font-weight: 600;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card-container {
+    margin: 0.2em 0;
+    width: 100%;
   }
 }

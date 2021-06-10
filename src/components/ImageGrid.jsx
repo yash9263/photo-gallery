@@ -1,46 +1,38 @@
 import useFirestore from "../hooks/useFirestore";
 import Card from "./card/Card";
 import "./imageGrid/ImageGrid.scss";
+import Masonry from "react-masonry-css";
 
 const ImageGrid = () => {
   const { docs } = useFirestore("images");
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
 
   return (
-    <div className="img-grid-cont">
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column"
+    >
       {docs &&
         docs.map((doc, index) => {
           return (
             <Card
+              key={doc.id}
               id={doc.id}
               url={doc.url}
               likes={doc.likes}
               comments={doc.comments}
               owner={doc.owner}
-              // height={index % 2 == 0 ? "12em" : "18em"}
+              height={index % 2 == 0 ? "14em" : "18em"}
             />
           );
-          {
-            /* <div
-              key={doc.id}
-              className="max-w-sm rounded overflow-hidden shadow-lg"
-            >
-              <img
-                className="w-full"
-                src={doc.url}
-                loading="lazy"
-                alt="image"
-              />
-
-              <ImageBar
-                id={doc.id}
-                url={doc.url}
-                totalLikes={doc.likes.length}
-                totalComments={doc.comments}
-              />
-            </div> */
-          }
         })}
-    </div>
+    </Masonry>
   );
 };
 
