@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <h1>SnapShot</h1>
+      {/* <h1>SnapShot</h1> */}
       <ImageInput />
       <ImageGrid />
     </div>

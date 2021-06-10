@@ -59,7 +59,7 @@ function Card({ id, owner, url, likes, comments, height }) {
         <i
           onClick={user ? likeHandler : errorHandler}
           className={
-            likes.includes(user.displayName)
+            user && likes.includes(user.displayName)
               ? "fas fa-heart liked-icon"
               : "fas fa-heart"
           }

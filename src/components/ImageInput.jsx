@@ -2,6 +2,7 @@ import react, { useContext, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { firebaseContext } from "../hooks/FirebaseProvider";
 import LoginSnack from "./LoginSnack";
+import "./imageInput/ImageInput.scss";
 
 const ImageInput = () => {
   const user = useContext(firebaseContext);
@@ -26,15 +27,18 @@ const ImageInput = () => {
       setError("");
     } else {
       setError("Please Login");
+      setTimeout(() => {
+        setError("");
+      }, 4000);
       setFile(null);
     }
   }
 
   return (
-    <form className="mx-auto">
-      <div className="border-2 border-gray-400 my-5 inline-block p-2 rounded">
-        <label className="cursor-pointer border-black">
-          <span className="">Select an Image</span>
+    <form className="create-post-cont">
+      <div className="post-btn">
+        <label className="">
+          <span className="">Create Post</span>
           <input
             type="file"
             onChange={user ? changeHadler : noUser}

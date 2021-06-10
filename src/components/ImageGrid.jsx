@@ -5,6 +5,7 @@ import Masonry from "react-masonry-css";
 
 const ImageGrid = () => {
   const { docs } = useFirestore("images");
+
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
